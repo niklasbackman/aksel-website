@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import {
   AmplitudeProvider,
@@ -21,6 +22,15 @@ function App({
   const [pageData, setPageData] = useState(null);
 
   useScrollToHashOnPageLoad();
+
+  /* Used for nextjs issue-demo */
+  const demoRouter = useRouter();
+  useEffect(() => {
+    demoRouter.beforePopState(({ url, as }) => {
+      console.log(JSON.stringify({ url, as }, null, 2));
+      return true;
+    });
+  }, []);
 
   useEffect(() => {
     setPageData(pageProps);
