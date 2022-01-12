@@ -131,19 +131,19 @@ const Menu = ({
           return (
             <li key={item.title + x}>
               <NextLink href={`/${item.link.slug.current}`} passHref>
-                <a
+                <ScLink
                   onClick={(e) => {
                     onClick && onClick();
                     logNavigation(e);
                   }}
-                  /* active={
+                  active={
                     pageProps?.page
                       ? pageProps.page.slug === item.link.slug.current
                       : false
-                  } */
+                  }
                 >
                   {item.title}
-                </a>
+                </ScLink>
               </NextLink>
             </li>
           );
