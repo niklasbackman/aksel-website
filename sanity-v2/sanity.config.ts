@@ -7,7 +7,7 @@ export default createConfig({
   title: "Aksel",
 
   projectId: "hnbe3yhs",
-  dataset: "production",
+  dataset: "development",
 
   plugins: [deskTool()],
 
